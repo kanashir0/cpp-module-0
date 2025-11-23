@@ -1,4 +1,4 @@
-NAME = megaphone
+NAME = phonebook
 
 RED = \033[0;31m
 GREEN = \033[0;32m
@@ -9,7 +9,7 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRC_DIR = src/
 
-SRC =	$(addprefix $(SRC_DIR), megaphone.cpp)
+SRC =	$(addprefix $(SRC_DIR), main.cpp PhoneBook.cpp Contact.cpp)
 
 OBJS = $(SRC:$(SRC_DIR)%.cpp=$(OBJ_DIR)%.o)
 
@@ -24,7 +24,7 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
 	@$(CC) $(CFLAGS) $(INC_DIR) -c $< -o $@
 
 clean:
-	@rm -rf $(OBJ_DIR)
+	@rm -rf $(OBJS)
 
 fclean: clean
 	@printf "$(RED)[Cleaning]$(NC)\n" "$(notdir $(<))"
