@@ -8,6 +8,14 @@ Contact::Contact() {
     DarkestSecret = "";
 };
 
+void Contact::getContact(void) {
+    std::cout << "First Name: " << this->FirstName << std::endl; 
+    std::cout << "Last Name: " << this->LastName << std::endl; 
+    std::cout << "Nickame: " << this->Nickname << std::endl; 
+    std::cout << "Phone Number: " << this->PhoneNumber << std::endl; 
+    std::cout << "Darkest Secret: " << this->DarkestSecret << std::endl; 
+}
+
 std::string Contact::getFirstName(void) {
     return this->FirstName;
 };

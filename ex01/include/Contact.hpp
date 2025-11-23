@@ -3,6 +3,7 @@
 
 # include <string>
 # include <iostream>
+# include <iomanip>
 
 class Contact {
 	private:
@@ -23,6 +24,7 @@ class Contact {
 		std::string getNickname(void);
 		std::string getPhoneNumber(void);
 		std::string getDarkestSecret(void);
+		void getContact(void);
 	};
 
 #endif

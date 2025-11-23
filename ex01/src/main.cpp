@@ -18,6 +18,7 @@ int	main(void) {
 		} else if (cmd == "exit") {
 			return (0);
 		} else {
+			std::cout << "Command not found!" << std::endl;
 			continue ;
 		}
 	}

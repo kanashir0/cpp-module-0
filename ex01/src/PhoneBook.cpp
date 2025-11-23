@@ -51,6 +51,9 @@ void PhoneBook::addContact() {
 }
 
 void PhoneBook::searchContact() {
+    int choice;
+    int i;
+
     if (this->ctt_list[0].getFirstName() == "") {
         std::cout << "No records in your PhoneBook!" << std::endl;
         return ;
@@ -58,7 +61,8 @@ void PhoneBook::searchContact() {
     std::cout << "|-------------------------------------------|" << std::endl;
     std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
     std::cout << "|----------|----------|----------|----------|" << std::endl;
-    for (int i = 0; i < 8; i++) {
+    i = 0;
+    while (i < 8) {
         if (this->ctt_list[i].getFirstName() == "")
             break ;
         std::cout << "|" << std::setw(10) << i << 
@@ -66,6 +70,14 @@ void PhoneBook::searchContact() {
         "|" << std::setw(10) << get_shortcut(this->ctt_list[i].getLastName()) << 
         "|" << std::setw(10) << get_shortcut(this->ctt_list[i].getNickname()) << 
         "|" << std::endl;
+        i++;
     }
     std::cout << "|----------|----------|----------|----------|" << std::endl;
+
+    std::cout << "Select an index to view more details:" << std::endl;
+    std::cin >> choice;
+    if (choice >= 0 && choice < 8 && choice < i)
+        this->ctt_list[choice].getContact();
+    else
+        std::cout << "Contact not found or out of range!" << std::endl;
 }
