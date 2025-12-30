@@ -11,6 +11,8 @@ SRC_DIR = src/
 
 SRC =	$(addprefix $(SRC_DIR), megaphone.cpp)
 
+OBJ_DIR = obj/
+
 OBJS = $(SRC:$(SRC_DIR)%.cpp=$(OBJ_DIR)%.o)
 
 all: $(NAME)
