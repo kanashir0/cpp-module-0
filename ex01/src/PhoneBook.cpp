@@ -23,23 +23,23 @@ void PhoneBook::addContact() {
     std::string darkest_secret;
 
     std::cout << "You need to fill some information about the new contact: " << std::endl;
-    std::cout << "First name: " << std::ends;
+    std::cout << "First name: ";
     std::getline(std::cin, first_name);
     ctt.setFirstName(first_name);
 
-    std::cout << "Last name: " << std::ends;
+    std::cout << "Last name: ";
     std::getline(std::cin, last_name);
     ctt.setLastName(last_name);
 
-    std::cout << "Nickname: " << std::ends;
+    std::cout << "Nickname: ";
     std::getline(std::cin, nick_name);
     ctt.setNickname(nick_name);
 
-    std::cout << "Phone number: " << std::ends;
+    std::cout << "Phone number: ";
     std::getline(std::cin, phone_number);
     ctt.setPhoneNumber(phone_number);
 
-    std::cout << "Darkest Secret: " << std::ends;
+    std::cout << "Darkest Secret: ";
     std::getline(std::cin, darkest_secret);
     ctt.setDarkestSecret(darkest_secret);
 
@@ -75,7 +75,12 @@ void PhoneBook::searchContact() {
     std::cout << "|----------|----------|----------|----------|" << std::endl;
 
     std::cout << "Select an index to view more details:" << std::endl;
-    std::cin >> choice;
+    std::string input_choice;
+    std::getline(std::cin, input_choice);
+    if (input_choice.length() == 1 && std::isdigit(input_choice[0]))
+        choice = input_choice[0] - '0';
+    else
+        choice = -1;
     if (choice >= 0 && choice < 8 && choice < i)
         this->ctt_list[choice].getContact();
     else

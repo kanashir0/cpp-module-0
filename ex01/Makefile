@@ -11,6 +11,8 @@ SRC_DIR = src/
 
 SRC =	$(addprefix $(SRC_DIR), main.cpp PhoneBook.cpp Contact.cpp)
 
+OBJ_DIR = obj/
+
 OBJS = $(SRC:$(SRC_DIR)%.cpp=$(OBJ_DIR)%.o)
 
 all: $(NAME)
@@ -24,7 +26,7 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
 	@$(CC) $(CFLAGS) $(INC_DIR) -c $< -o $@
 
 clean:
-	@rm -rf $(OBJS)
+	@rm -rf $(OBJ_DIR)
 
 fclean: clean
 	@printf "$(RED)[Cleaning]$(NC)\n" "$(notdir $(<))"

@@ -65,3 +65,42 @@ Cada exercício possui seu próprio `Makefile`. Para compilar e testar o **ex00*
 ## ✅ Status da Revisão
 
 - **ex00 (Megaphone)**: O código segue os requisitos do subject, compilando com as flags corretas (`-Wall -Wextra -Werror -std=c++98`) e produzindo a saída esperada. O `Makefile` foi ajustado para gerenciar corretamente os diretórios de objetos.
+
+### ex01: My Awesome PhoneBook
+Uma agenda telefônica simples interativa. O programa aceita três comandos principais: `ADD`, `SEARCH` e `EXIT`.
+
+**Conceitos Praticados:**
+- Classes e Objetos
+- Controle de fluxo e loops
+- Manipulação de arrays de objetos da classe
+- Formatação de saída com `iomanip` (`std::setw`)
+
+## 🛠️ Como Compilar e Executar
+
+Cada exercício possui seu próprio `Makefile`. Para compilar e testar o **ex01**, siga os passos abaixo:
+
+1. Navegue até o diretório do exercício:
+   ```bash
+   cd ex01
+   ```
+
+2. Compile o código usando `make`:
+   ```bash
+   make
+   ```
+   Isso gerará um executável chamado `phonebook`.
+
+3. Execute o programa:
+   ```bash
+   ./phonebook
+   ```
+
+4. Interaja com o programa usando os comandos:
+   - `ADD`: Adiciona um novo contato (limite de 8, sobrescreve o mais antigo).
+   - `SEARCH`: Lista os contatos e permite visualizar detalhes pelo índice.
+   - `EXIT`: Fecha o programa e perde os contatos (memória volátil).
+
+5. Para limpar os arquivos objetos e o executável:
+   ```bash
+   make fclean
+   ```

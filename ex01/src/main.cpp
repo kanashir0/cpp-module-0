@@ -11,11 +11,11 @@ int	main(void) {
 		if (cmd == "") {
 			continue ;
 		}
-		if (cmd == "add") {
+		if (cmd == "ADD") {
 			pb.addContact();
-		} else if (cmd == "search") {
+		} else if (cmd == "SEARCH") {
 			pb.searchContact();
-		} else if (cmd == "exit") {
+		} else if (cmd == "EXIT") {
 			return (0);
 		} else {
 			std::cout << "Command not found!" << std::endl;
